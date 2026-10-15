@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ブログ | はりしごと</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --sky:#bfe6f7;
+  --sky-deep:#5bb4e0;
+  --sky-pale:#eaf7fd;
+  --sun:#ffd23f;
+  --sun-pale:#fff3b8;
+  --ink:#1d3b52;
+  --white:#fff;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:"Zen Maru Gothic","Hiragino Maru Gothic ProN","Yu Gothic",sans-serif;
+  background:var(--sky-pale);
+  color:var(--ink);
+  line-height:1.85;
+  font-size:16px;
+}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--ink);outline-offset:3px;border-radius:4px}
+
+.stitch{border:2px dashed var(--sky-deep);border-radius:18px}
+
+header{
+  background:var(--sky);
+  border-bottom:4px solid var(--sun);
+  position:sticky;top:0;z-index:10;
+}
+.bar{
+  max-width:1000px;margin:0 auto;padding:12px 20px;
+  display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;
+}
+.logo{font-weight:700;font-size:1.25rem;text-decoration:none;letter-spacing:.08em}
+nav ul{list-style:none;display:flex;gap:6px;flex-wrap:wrap}
+nav a{
+  display:block;padding:6px 16px;border-radius:999px;text-decoration:none;font-weight:500;
+  transition:background .2s;
+}
+nav a:hover{background:var(--sun-pale)}
+nav a[aria-current="page"]{background:var(--sun)}
+
+main{max-width:680px;margin:0 auto;padding:0 20px}
+
+.title{padding:48px 0 24px}
+.title h1{font-size:clamp(1.8rem,4.6vw,2.6rem);line-height:1.35;margin-bottom:8px}
+.title h1 span{background:linear-gradient(transparent 62%,var(--sun) 62%);padding:0 4px}
+.title p{opacity:.85}
+
+/* タイムライン */
+.feed{list-style:none;position:relative;padding:8px 0 24px 28px}
+/* 縫い糸のような縦線 */
+.feed::before{
+  content:"";position:absolute;left:7px;top:0;bottom:0;
+  border-left:3px dashed var(--sky-deep);
+}
+.feed li{position:relative;margin-bottom:18px}
+.feed li::before{
+  content:"";position:absolute;left:-28px;top:20px;
+  width:15px;height:15px;border-radius:50%;
+  background:var(--sun);border:3px solid var(--ink);
+}
+.post{background:var(--white);padding:16px 20px 18px}
+.post time{
+  display:block;font-size:.85rem;font-weight:700;color:var(--sky-deep);margin-bottom:4px;
+}
+.post p{white-space:pre-line;overflow-wrap:anywhere}
+
+footer{
+  margin-top:40px;padding:26px 20px;text-align:center;
+  background:var(--sky);border-top:4px solid var(--sun);font-size:.9rem;
+}
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="bar">
+    <a class="logo" href="index.html">はりしごと</a>
+    <nav aria-label="メインメニュー">
+      <ul>
+        <li><a href="index.html">ホーム</a></li>
+        <li><a href="blog.html" aria-current="page">ブログ</a></li>
+        <li><a href="gallery.html">ギャラリー</a></li>
+        <li><a href="about.html">about</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="title">
+    <h1>刺繍の<span>勉強日記</span></h1>
+    <p>毎日の進み具合を、ひとことずつ残していきます。</p>
+  </div>
+
+  <!--
+    投稿の追加方法：
+    下の <li> ... </li> を丸ごとコピーして、一番上に貼り、日付と本文を書き換えてください。
+    datetime="" には 年-月-日 の形式で同じ日付を入れてください。
+  -->
+  <ol class="feed">
+    <li>
+      <article class="post stitch">
+        <time datetime="2026-10-15">2026.10.15</time>
+        <p>バックステッチで小さな花の輪郭を刺した。糸を引く強さがそろってきた気がする。</p>
+      </article>
+    </li>
+    <li>
+      <article class="post stitch">
+        <time datetime="2026-10-14">2026.10.14</time>
+        <p>サテンステッチの練習。糸の向きをそろえるのがむずかしい。明日は短い針目からやり直す。</p>
+      </article>
+    </li>
+    <li>
+      <article class="post stitch">
+        <time datetime="2026-10-12">2026.10.12</time>
+        <p>フレンチナッツに挑戦。巻く回数で粒の大きさが変わるのがおもしろい。</p>
+      </article>
+    </li>
+    <li>
+      <article class="post stitch">
+        <time datetime="2026-10-10">2026.10.10</time>
+        <p>ランニングステッチで直線と曲線を練習した。針目の長さをそろえるのが最初の目標。</p>
+      </article>
+    </li>
+  </ol>
+</main>
+
+<footer>
+  <p>© 2026 はりしごと</p>
+</footer>
+
+</body>
+</html>
