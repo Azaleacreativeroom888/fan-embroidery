@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>はりしごと | 刺繍の勉強サイト</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --sky:#bfe6f7;
+  --sky-deep:#5bb4e0;
+  --sky-pale:#eaf7fd;
+  --sun:#ffd23f;
+  --sun-pale:#fff3b8;
+  --ink:#1d3b52;
+  --white:#fff;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:"Zen Maru Gothic","Hiragino Maru Gothic ProN","Yu Gothic",sans-serif;
+  background:var(--sky-pale);
+  color:var(--ink);
+  line-height:1.85;
+  font-size:16px;
+}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--ink);outline-offset:3px;border-radius:4px}
+
+/* ステッチ風の縫い目 */
+.stitch{border:2px dashed var(--sky-deep);border-radius:18px}
+
+header{
+  background:var(--sky);
+  border-bottom:4px solid var(--sun);
+  position:sticky;top:0;z-index:10;
+}
+.bar{
+  max-width:1000px;margin:0 auto;padding:12px 20px;
+  display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;
+}
+.logo{font-weight:700;font-size:1.25rem;text-decoration:none;letter-spacing:.08em}
+nav ul{list-style:none;display:flex;gap:6px;flex-wrap:wrap}
+nav a{
+  display:block;padding:6px 16px;border-radius:999px;text-decoration:none;font-weight:500;
+  transition:background .2s;
+}
+nav a:hover{background:var(--sun-pale)}
+nav a[aria-current="page"]{background:var(--sun)}
+
+main{max-width:1000px;margin:0 auto;padding:0 20px}
+
+/* ヒーロー */
+.hero{
+  display:grid;grid-template-columns:1.1fr .9fr;gap:32px;align-items:center;
+  padding:56px 0 40px;
+}
+.hero h1{font-size:clamp(2rem,5.2vw,3.2rem);line-height:1.35;font-weight:700;margin-bottom:18px}
+.hero h1 span{background:linear-gradient(transparent 62%,var(--sun) 62%);padding:0 4px}
+.hero p{max-width:30em;margin-bottom:26px}
+.btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn{
+  display:inline-block;padding:11px 26px;border-radius:999px;font-weight:700;text-decoration:none;
+  border:2px solid var(--ink);transition:transform .15s;
+}
+.btn:hover{transform:translateY(-2px)}
+.btn.main{background:var(--sun)}
+.btn.sub{background:var(--white)}
+
+.hoop{width:100%;max-width:380px;margin:0 auto;display:block}
+.thread{stroke-dasharray:600;stroke-dashoffset:600;animation:draw 3.2s ease-out .4s forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+
+section{padding:36px 0}
+h2{font-size:1.5rem;font-weight:700;margin-bottom:6px}
+.lead{margin-bottom:22px;opacity:.85}
+
+/* ステッチ一覧 */
+.stitches{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:16px;list-style:none}
+.stitches li{background:var(--white);padding:18px 16px 16px}
+.stitches svg{display:block;width:100%;height:30px;margin-bottom:8px}
+.stitches b{display:block;font-size:1rem}
+.stitches small{font-size:.85rem;opacity:.8}
+
+/* 最近の日記 */
+.log{display:grid;gap:14px}
+.post{background:var(--white);padding:16px 20px}
+.post time{display:block;font-size:.85rem;font-weight:700;color:var(--sky-deep);margin-bottom:2px}
+.more{display:inline-block;margin-top:16px;font-weight:700}
+
+/* ギャラリー */
+.thumbs{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px}
+.thumb{
+  aspect-ratio:1/1;display:grid;place-items:center;text-align:center;padding:10px;
+  font-size:.85rem;background:var(--sun-pale);
+}
+.thumb:nth-child(even){background:var(--sky)}
+
+footer{
+  margin-top:40px;padding:26px 20px;text-align:center;
+  background:var(--sky);border-top:4px solid var(--sun);font-size:.9rem;
+}
+
+@media (max-width:720px){
+  .hero{grid-template-columns:1fr;padding-top:36px}
+  .hoop{max-width:280px;order:-1}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .thread{animation:none;stroke-dashoffset:0}
+  .btn{transition:none}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="bar">
+    <a class="logo" href="index.html">はりしごと</a>
+    <nav aria-label="メインメニュー">
+      <ul>
+        <li><a href="index.html" aria-current="page">ホーム</a></li>
+        <li><a href="blog.html">ブログ</a></li>
+        <li><a href="gallery.html">ギャラリー</a></li>
+        <li><a href="about.html">about</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="hero">
+    <div>
+      <h1>ひと針ずつ、<br><span>刺繍</span>を学ぶ場所</h1>
+      <p>刺繍の勉強の記録と、漫画やイラストをまとめたサイトです。針と糸で少しずつ覚えたことを、日記のように残していきます。</p>
+      <div class="btns">
+        <a class="btn main" href="blog.html">勉強の記録を見る</a>
+        <a class="btn sub" href="gallery.html">ギャラリーを見る</a>
+      </div>
+    </div>
+
+    <!-- 刺繍枠のイラスト -->
+    <svg class="hoop" viewBox="0 0 300 300" role="img" aria-label="刺繍枠に黄色い花が刺繍されているイラスト">
+      <circle cx="150" cy="150" r="136" fill="#fff" stroke="#5bb4e0" stroke-width="14"/>
+      <circle cx="150" cy="150" r="126" fill="none" stroke="#1d3b52" stroke-width="2"/>
+      <rect x="138" y="2" width="24" height="22" rx="5" fill="#ffd23f" stroke="#1d3b52" stroke-width="2"/>
+      <circle cx="150" cy="150" r="108" fill="none" stroke="#bfe6f7" stroke-width="3" stroke-dasharray="7 6"/>
+      <!-- 茎と葉 -->
+      <path class="thread" d="M150 228 C150 200 148 180 150 162" fill="none" stroke="#5bb4e0" stroke-width="5" stroke-linecap="round" stroke-dasharray="8 6" style="stroke-dashoffset:0;animation:none"/>
+      <path d="M150 205 C128 205 114 192 110 176 C130 176 146 186 150 205Z" fill="none" stroke="#5bb4e0" stroke-width="4" stroke-dasharray="7 5" stroke-linejoin="round"/>
+      <path d="M150 190 C172 190 186 177 190 161 C170 161 154 171 150 190Z" fill="none" stroke="#5bb4e0" stroke-width="4" stroke-dasharray="7 5" stroke-linejoin="round"/>
+      <!-- 花びら -->
+      <g fill="#ffd23f" stroke="#1d3b52" stroke-width="2">
+        <ellipse cx="150" cy="104" rx="17" ry="28"/>
+        <ellipse cx="150" cy="104" rx="17" ry="28" transform="rotate(72 150 140)"/>
+        <ellipse cx="150" cy="104" rx="17" ry="28" transform="rotate(144 150 140)"/>
+        <ellipse cx="150" cy="104" rx="17" ry="28" transform="rotate(216 150 140)"/>
+        <ellipse cx="150" cy="104" rx="17" ry="28" transform="rotate(288 150 140)"/>
+      </g>
+      <circle cx="150" cy="140" r="14" fill="#5bb4e0" stroke="#1d3b52" stroke-width="2"/>
+      <circle cx="145" cy="136" r="2.5" fill="#fff"/><circle cx="154" cy="141" r="2.5" fill="#fff"/><circle cx="148" cy="146" r="2.5" fill="#fff"/>
+      <!-- 針と糸 -->
+      <path class="thread" d="M222 232 C250 222 262 244 238 262 C222 274 206 268 196 256" fill="none" stroke="#5bb4e0" stroke-width="3" stroke-linecap="round"/>
+      <line x1="196" y1="256" x2="236" y2="206" stroke="#1d3b52" stroke-width="3" stroke-linecap="round"/>
+    </svg>
+  </div>
+
+  <section aria-labelledby="stitch-h">
+    <h2 id="stitch-h">学んでいるステッチ</h2>
+    <p class="lead">まずは基本の刺し方から。少しずつ増やしていきます。</p>
+    <ul class="stitches">
+      <li class="stitch">
+        <svg viewBox="0 0 150 30" aria-hidden="true"><line x1="6" y1="15" x2="144" y2="15" stroke="#5bb4e0" stroke-width="4" stroke-dasharray="14 10" stroke-linecap="round"/></svg>
+        <b>ランニングステッチ</b><small>点線のように等間隔で進む基本</small>
+      </li>
+      <li class="stitch">
+        <svg viewBox="0 0 150 30" aria-hidden="true"><path d="M6 15H144" stroke="#1d3b52" stroke-width="4" stroke-linecap="round"/></svg>
+        <b>バックステッチ</b><small>線や輪郭をつなげて描く</small>
+      </li>
+      <li class="stitch">
+        <svg viewBox="0 0 150 30" aria-hidden="true"><g stroke="#e6b800" stroke-width="3" stroke-linecap="round"><path d="M10 6l8 18M22 6l8 18M34 6l8 18M46 6l8 18M58 6l8 18M70 6l8 18M82 6l8 18M94 6l8 18M106 6l8 18M118 6l8 18M130 6l8 18"/></g></svg>
+        <b>サテンステッチ</b><small>面をすき間なく埋める</small>
+      </li>
+      <li class="stitch">
+        <svg viewBox="0 0 150 30" aria-hidden="true"><g fill="#ffd23f" stroke="#1d3b52" stroke-width="2"><circle cx="25" cy="15" r="8"/><circle cx="75" cy="15" r="8"/><circle cx="125" cy="15" r="8"/></g></svg>
+        <b>フレンチナッツ</b><small>小さな粒で花の中心などに</small>
+      </li>
+    </ul>
+  </section>
+
+  <section aria-labelledby="log-h">
+    <h2 id="log-h">最近の記録</h2>
+    <p class="lead">ブログに書いた最新の日記です。（あとで書き換えてね）</p>
+    <div class="log">
+      <article class="post stitch">
+        <time datetime="2026-10-15">2026.10.15</time>
+        <p>ここに勉強の進捗が入ります。今日はバックステッチで小さな花の輪郭を刺しました。</p>
+      </article>
+      <article class="post stitch">
+        <time datetime="2026-10-14">2026.10.14</time>
+        <p>ここに勉強の進捗が入ります。サテンステッチの糸の向きをそろえるのがむずかしい。</p>
+      </article>
+    </div>
+    <a class="more" href="blog.html">ブログをすべて見る</a>
+  </section>
+
+  <section aria-labelledby="gal-h">
+    <h2 id="gal-h">ギャラリー</h2>
+    <p class="lead">漫画やイラスト、刺繍の作品を載せていきます。</p>
+    <div class="thumbs">
+      <div class="thumb stitch">イラスト</div>
+      <div class="thumb stitch">漫画</div>
+      <div class="thumb stitch">刺繍作品</div>
+      <div class="thumb stitch">コミッション</div>
+    </div>
+    <a class="more" href="gallery.html">ギャラリーへ行く</a>
+  </section>
+</main>
+
+<footer>
+  <p>© 2026 はりしごと</p>
+</footer>
+
+</body>
+</html>
