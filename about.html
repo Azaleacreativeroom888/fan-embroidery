@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>about | はりしごと</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --sky:#bfe6f7;
+  --sky-deep:#5bb4e0;
+  --sky-pale:#eaf7fd;
+  --sun:#ffd23f;
+  --sun-pale:#fff3b8;
+  --ink:#1d3b52;
+  --white:#fff;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:"Zen Maru Gothic","Hiragino Maru Gothic ProN","Yu Gothic",sans-serif;
+  background:var(--sky-pale);
+  color:var(--ink);
+  line-height:1.85;
+  font-size:16px;
+}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--ink);outline-offset:3px;border-radius:4px}
+
+.stitch{border:2px dashed var(--sky-deep);border-radius:18px}
+
+header{
+  background:var(--sky);
+  border-bottom:4px solid var(--sun);
+  position:sticky;top:0;z-index:10;
+}
+.bar{
+  max-width:1000px;margin:0 auto;padding:12px 20px;
+  display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;
+}
+.logo{font-weight:700;font-size:1.25rem;text-decoration:none;letter-spacing:.08em}
+nav ul{list-style:none;display:flex;gap:6px;flex-wrap:wrap}
+nav a{
+  display:block;padding:6px 16px;border-radius:999px;text-decoration:none;font-weight:500;
+  transition:background .2s;
+}
+nav a:hover{background:var(--sun-pale)}
+nav a[aria-current="page"]{background:var(--sun)}
+
+main{max-width:860px;margin:0 auto;padding:0 20px}
+
+.title{padding:48px 0 12px}
+.title h1{font-size:clamp(1.8rem,4.6vw,2.6rem);line-height:1.35;margin-bottom:8px}
+.title h1 span{background:linear-gradient(transparent 62%,var(--sun) 62%);padding:0 4px}
+.title p{opacity:.85}
+
+section{padding:26px 0}
+h2{
+  font-size:1.2rem;font-weight:700;margin-bottom:14px;
+  display:flex;align-items:center;gap:12px;
+}
+h2::after{content:"";flex:1;border-top:3px dashed var(--sky-deep)}
+
+.card{background:var(--white);padding:22px 24px}
+.card p+p{margin-top:.8em}
+
+/* リンクカード */
+.links{
+  display:grid;gap:14px;list-style:none;
+  grid-template-columns:repeat(auto-fill,minmax(240px,1fr));
+}
+.links a{
+  display:flex;align-items:center;gap:14px;text-decoration:none;
+  background:var(--white);padding:14px 16px;height:100%;
+  transition:transform .15s,background .2s;
+}
+.links a:hover{transform:translateY(-2px);background:var(--sun-pale)}
+.icon{
+  flex:none;width:44px;height:44px;border-radius:12px;font-size:1.4rem;
+  display:grid;place-items:center;background:var(--sky);
+}
+.links b{display:block;line-height:1.4}
+.links small{display:block;font-size:.8rem;opacity:.75;line-height:1.5}
+.arrow{margin-left:auto;font-weight:700;color:var(--sky-deep);font-size:1.3rem}
+
+/* フォーム */
+form{background:var(--white);padding:24px}
+.field{margin-bottom:18px}
+label{display:block;font-weight:700;font-size:.9rem;margin-bottom:6px}
+.req{color:#d6455d;font-style:normal}
+input[type=text],input[type=email],textarea{
+  width:100%;font:inherit;color:var(--ink);
+  padding:10px 14px;border:2px solid var(--sky-deep);border-radius:12px;background:var(--sky-pale);
+}
+input::placeholder,textarea::placeholder{color:#7d98ab}
+textarea{min-height:150px;resize:vertical}
+input:focus,textarea:focus{outline:3px solid var(--sun);border-color:var(--ink)}
+button[type=submit]{
+  font:inherit;font-weight:700;color:var(--ink);cursor:pointer;
+  padding:11px 32px;border-radius:999px;background:var(--sun);
+  border:2px solid var(--ink);transition:transform .15s;
+}
+button[type=submit]:hover{transform:translateY(-2px)}
+
+.back{display:inline-block;margin-top:8px;font-weight:700}
+
+footer{
+  margin-top:40px;padding:26px 20px;text-align:center;
+  background:var(--sky);border-top:4px solid var(--sun);font-size:.85rem;
+}
+footer p{max-width:760px;margin:0 auto 8px}
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .links a,button[type=submit]{transition:none}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="bar">
+    <a class="logo" href="index.html">はりしごと</a>
+    <nav aria-label="メインメニュー">
+      <ul>
+        <li><a href="index.html">ホーム</a></li>
+        <li><a href="blog.html">ブログ</a></li>
+        <li><a href="gallery.html">ギャラリー</a></li>
+        <li><a href="about.html" aria-current="page">about</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="title">
+    <h1><span>about</span></h1>
+    <p>このサイトのことと、リンク・お問い合わせ。</p>
+  </div>
+
+  <section aria-labelledby="site-h">
+    <h2 id="site-h">このサイトについて</h2>
+    <div class="card stitch">
+      <p>「はりしごと」は、刺繍の勉強の記録と、漫画やイラストなどの作品をまとめたサイトです。</p>
+      <p>ブログには日々の進み具合を、ギャラリーには作品を載せています。</p>
+      <p>ここに運営者の自己紹介を書いてね。</p>
+    </div>
+  </section>
+
+  <section aria-labelledby="art-h">
+    <h2 id="art-h">漫画・イラスト掲載サイト</h2>
+    <ul class="links">
+      <li>
+        <a class="stitch" href="https://rookie.shonenjump.com/users/14728546961183734555" target="_blank" rel="noopener">
+          <span class="icon" aria-hidden="true">📚</span>
+          <span><b>ジャンプルーキー</b><small>オリジナル漫画を掲載中</small></span>
+          <span class="arrow" aria-hidden="true">›</span>
+        </a>
+      </li>
+      <li>
+        <a class="stitch" href="https://www.pixiv.net/users/105728284" target="_blank" rel="noopener">
+          <span class="icon" aria-hidden="true">🎨</span>
+          <span><b>Pixiv</b><small>二次創作はこちらに掲載</small></span>
+          <span class="arrow" aria-hidden="true">›</span>
+        </a>
+      </li>
+    </ul>
+  </section>
+
+  <section aria-labelledby="sns-h">
+    <h2 id="sns-h">SNS・その他</h2>
+    <ul class="links">
+      <li>
+        <a class="stitch" href="https://bsky.app/profile/azaleaazalea88.bsky.social" target="_blank" rel="noopener">
+          <span class="icon" aria-hidden="true">🦋</span>
+          <span><b>Bluesky</b><small>近況・作品のお知らせ</small></span>
+          <span class="arrow" aria-hidden="true">›</span>
+        </a>
+      </li>
+      <li>
+        <a class="stitch" href="https://www.youtube.com/@LilyPopins0512" target="_blank" rel="noopener">
+          <span class="icon" aria-hidden="true">🎬</span>
+          <span><b>YouTube（リリポピ）</b><small>動画チャンネル</small></span>
+          <span class="arrow" aria-hidden="true">›</span>
+        </a>
+      </li>
+    </ul>
+  </section>
+
+  <section aria-labelledby="form-h">
+    <h2 id="form-h">お問い合わせ</h2>
+    <p style="margin-bottom:14px">ご質問・ご感想などはこちらからどうぞ。</p>
+
+    <form class="stitch" action="https://formspree.io/f/maqvpvoz" method="POST">
+      <input type="hidden" name="_subject" value="はりしごと（刺繍サイト）からのお問い合わせ">
+
+      <div class="field">
+        <label for="name">お名前</label>
+        <input type="text" id="name" name="name" placeholder="お名前（ニックネームでもOK）" autocomplete="name">
+      </div>
+
+      <div class="field">
+        <label for="email">メールアドレス <em class="req">*</em></label>
+        <input type="email" id="email" name="email" placeholder="example@email.com" autocomplete="email" required>
+      </div>
+
+      <div class="field">
+        <label for="message">メッセージ <em class="req">*</em></label>
+        <textarea id="message" name="message" placeholder="メッセージを入力してください" required></textarea>
+      </div>
+
+      <button type="submit">送信する</button>
+    </form>
+  </section>
+
+  <a class="back" href="index.html">← ホームに戻る</a>
+</main>
+
+<footer>
+  <p>当サイトに掲載されている画像・文章・作品について、AI学習への利用、トレース、無断転載、二次利用を禁止します。</p>
+  <p>© 2026 はりしごと</p>
+</footer>
+
+</body>
+</html>
